@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "0f6d32de-0174-4de4-ba0c-e5770e2ff9e1",
+		"name": "Apis login falabella",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"validar la imagen sea 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"\r",
+							"\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.falabella.com.co/falabella-co/category/cat1660941/Celulares-y-Smartphones",
+					"protocol": "https",
+					"host": [
+						"www",
+						"falabella",
+						"com",
+						"co"
+					],
+					"path": [
+						"falabella-co",
+						"category",
+						"cat1660941",
+						"Celulares-y-Smartphones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "busqueda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"respuesta incluye nombre de la descripcion\", function () {\r",
+							"    pm.expect(pm.response.text()).to,incluide(\"descripcion\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://merqueo.com/api/4.0/brandroom/store/63/warehouse/5?name=J%26J",
+					"protocol": "https",
+					"host": [
+						"merqueo",
+						"com"
+					],
+					"path": [
+						"api",
+						"4.0",
+						"brandroom",
+						"store",
+						"63",
+						"warehouse",
+						"5"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "J&J"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get celular",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "www.falabella.com.co/falabella-co/category/cat3460941/iPhone?name=iphone 12",
+					"host": [
+						"www",
+						"falabella",
+						"com",
+						"co"
+					],
+					"path": [
+						"falabella-co",
+						"category",
+						"cat3460941",
+						"iPhone"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "iphone 12"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
